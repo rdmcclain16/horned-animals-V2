@@ -1,12 +1,30 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col } from 'react-bootstrap';
 import HornedBeast from './HornedBeast';
-import Parrot from '../images/parrot-2756488_1920.jpg';
+import { animalData } from '../data';
 
 function Main() {
   return (
     <>
-      <HornedBeast title="Parrot" imageURL={Parrot} desc="Colorful, loud, trpoical bird."/>
-      <HornedBeast/>
+      <Container>
+        <Row>
+          {animalData.map((data, key) => {
+            return (
+              <Col xs={12} md={6} lg={4}>
+                <div key={key}>
+                  <HornedBeast
+                    key={key}
+                    image_url={data.image_url}
+                    title={data.title}
+                    description={data.description}
+                  />
+                </div>
+              </Col>
+            );
+          })}
+        </Row>
+      </Container>
     </>
   );
 }
