@@ -3,12 +3,23 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Main from './components/Main';
+import { animalData } from './data';
+import { useState } from 'react';
+
 
 function App() {
+  const [modalOpen, setModalOpen] = useState(false);
+  let toggleModal  = () => {
+    setModalOpen(prevModalOpen => !prevModalOpen);
+  };
   return (
     <div className="App">
       <Header/>
-      <Main/>
+      <Main 
+        animalData={animalData} 
+        modalOpen={modalOpen}
+        toggleModal={toggleModal}
+      />
       <Footer/>
       {/* <Main/>
       <Footer/> */}
