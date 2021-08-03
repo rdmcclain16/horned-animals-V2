@@ -2,9 +2,9 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import HornedBeast from './HornedBeast';
-import SelectedBeast from './SelectedBeast';
+// import SelectedBeast from './SelectedBeast';
 
-function Main({animalData, modalOpen, toggleModal}) {
+function Main({animalData}) {
   return (
     <>
       <Container>
@@ -18,10 +18,6 @@ function Main({animalData, modalOpen, toggleModal}) {
                     image_url={data.image_url}
                     title={data.title}
                     description={data.description}
-                  />
-                  <SelectedBeast
-                    modalOpen={modalOpen}
-                    toggleModal={toggleModal} 
                   />
                 </div>
               </Col>
